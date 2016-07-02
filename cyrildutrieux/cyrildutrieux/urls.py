@@ -17,5 +17,5 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^easy_password/', include('cdtx.easy_password.app.urls')),
+    url(r'^easy_password/', include('cdtx.django_easy_password.urls')),
 ]
