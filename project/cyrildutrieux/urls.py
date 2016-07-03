@@ -13,9 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.contrib import admin
+
+handler400 = 'cdtx.django_error_handlers.views.handler400'
+handler403 = 'cdtx.django_error_handlers.views.handler403'
+handler404 = 'cdtx.django_error_handlers.views.handler404'
+handler500 = 'cdtx.django_error_handlers.views.handler500'
 
 urlpatterns = [
     url(r'^easy_password/', include('cdtx.django_easy_password.urls')),
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    # url(r'.*', include('cdtx.cyrildutrieux')),
 ]
