@@ -4,6 +4,7 @@
     <head>
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -13,9 +14,20 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div id="_main" class="text-center col-xs-12 col-md-8 col-md-offset-2">
-                    <p>Cyril DUTRIEUX</p>
-                    <a href="https://rawgit.com/cdtx/resume/2016.02.02/resume.html">English CV</a>
+                <div id="_main" class="col-xs-12 col-md-8 col-md-offset-2">
+                    <p class="text-center">Cyril DUTRIEUX</p>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <img class="img img-responsive" src="{% static "images/avatar_pro.jpg" %}">
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="text-center">
+                                <p><a href="https://rawgit.com/cdtx/resume/2016.02.02/resume.html">English CV</a></p>
+                                <p><i class="fa fa-linkedin-square"></i><a href="https://fr.linkedin.com/in/cyrildutrieux"> https://fr.linkedin.com/in/cyrildutrieux</a></p>
+                                <p><i class="fa fa-github"></i><a href="https://github.com/cdtx"> https://github.com/cdtx</a></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
