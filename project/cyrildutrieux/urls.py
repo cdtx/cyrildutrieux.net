@@ -26,5 +26,5 @@ handler500 = 'cdtx.django_error_handlers.views.handler500'
 urlpatterns = [
     url(r'^easy_password/', include('cdtx.django_easy_password.urls')),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    # url(r'.*', include('cdtx.cyrildutrieux')),
+    url(r'^', include('cdtx.cyrildutrieux.urls')),
 ]
