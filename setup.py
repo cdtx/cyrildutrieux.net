@@ -9,6 +9,7 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     packages=['cdtx.cyrildutrieux'],
+    package_data={'cdtx.cyrildutrieux': ['templates/*', 'static/*',]},
     install_requires = []
 )
 
