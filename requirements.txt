@@ -1,4 +1,5 @@
 Django==1.9.7
+django-crum==0.7.1
 djangorestframework==3.3.3
 git+https://github.com/cdtx/cyrildutrieux.net
 git+https://github.com/cdtx/django_error_handlers

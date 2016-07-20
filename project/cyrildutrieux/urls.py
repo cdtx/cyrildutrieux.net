@@ -17,6 +17,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 handler400 = 'cdtx.django_error_handlers.views.handler400'
 handler403 = 'cdtx.django_error_handlers.views.handler403'
@@ -24,6 +25,7 @@ handler404 = 'cdtx.django_error_handlers.views.handler404'
 handler500 = 'cdtx.django_error_handlers.views.handler500'
 
 urlpatterns = [
+    url(r'^admin/', include('django.contrib.auth.urls')),
     url(r'^easy_password/', include('cdtx.django_easy_password.urls')),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     url(r'^', include('cdtx.cyrildutrieux.urls')),
