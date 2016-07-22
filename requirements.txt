@@ -1,4 +1,6 @@
 Django==1.9.7
+nodeenv==0.13.6
+django-bower==5.1.0
 django-crum==0.7.1
 djangorestframework==3.3.3
 git+https://github.com/cdtx/cyrildutrieux.net
