@@ -1,4 +1,5 @@
 Django==1.9.7
+django-sslserver==0.19
 nodeenv==0.13.6
 django-bower==5.1.0
 django-crum==0.7.1
