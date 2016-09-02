@@ -10,26 +10,87 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.0/sjcl.min.js"></script>
+
+        <style>
+            #_header {
+                background-color : #323232;
+                color : #B3B3B3;
+            }
+            #_header img {
+                margin : 10px;
+            }
+            #_main {
+                margin-top : 10px;
+                background-color : #F7F7F7;
+            }
+
+            .card {
+            }
+            .card-body {
+                height : 400px;
+                box-shadow : 5px 5px 5px grey;
+                border-radius : 15px
+            }
+            #_card1 .card-body {
+                background-color : blue;
+            }
+            #_card2 .card-body {
+                background-color : yellow;
+            }
+            #_card3 .card-body {
+                background-color : red;
+            }
+        </style>
+
     </head>
 
     <body>
         <div class="container-fluid">
-            <div class="row">
-                <div id="_main" class="col-xs-12 col-md-8 col-md-offset-2">
-                    <p class="text-center">Cyril DUTRIEUX</p>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <img class="img img-responsive" src="{% static "images/avatar_pro.jpg" %}">
-                        </div>
-                        <div class="col-xs-6">
-                            <div class="text-center">
-                                <p><a href="https://rawgit.com/cdtx/resume/2016.02.02/resume.html">English CV</a></p>
-                                <p><i class="fa fa-linkedin-square"></i><a href="https://fr.linkedin.com/in/cyrildutrieux"> https://fr.linkedin.com/in/cyrildutrieux</a></p>
-                                <p><i class="fa fa-github"></i><a href="https://github.com/cdtx"> https://github.com/cdtx</a></p>
+            <div id="_header" class="row">
+                <div class="col-xs-2">
+                    <img class="img img-responsive" src="{% static "images/avatar_pro.jpg" %}">
+                </div>
+                <div class="col-xs-10">
+                    <h1>Cyril DUTRIEUX</h1>
+                    <h2>Développeur logiciel indépendant</h2>
+                </div>
+            </div>
+            <div id="_main" class="row">
+                <div id="_card1" class="card col-xs-4">
+                    <div class="card-body">
+                        <h1 class="text-center">Embarqué</h1>
+                        <p>aoeisnkjfne zaedzajn</p>
+                        <ul>
+                            <li>one</li>
+                            <li>two</li>
+                            <li>three</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="_card2" class="card col-xs-4">
+                    <div class="card-body"></div>
+                </div>
+                <div id="_card3" class="card col-xs-4">
+                    <div class="card-body"></div>
+                </div>
+            </div>
+                <!--
+                    <div id="_main" class="col-xs-12 col-md-8 col-md-offset-2">
+                        <p class="text-center">Cyril DUTRIEUX</p>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <img class="img img-responsive" src="{% static "images/avatar_pro.jpg" %}">
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="text-center">
+                                    <p><a href="https://rawgit.com/cdtx/resume/2016.02.02/resume.html">English CV</a></p>
+                                    <p><i class="fa fa-linkedin-square"></i><a href="https://fr.linkedin.com/in/cyrildutrieux"> https://fr.linkedin.com/in/cyrildutrieux</a></p>
+                                    <p><i class="fa fa-github"></i><a href="https://github.com/cdtx"> https://github.com/cdtx</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                -->
             </div>
         </div>
     </body>
