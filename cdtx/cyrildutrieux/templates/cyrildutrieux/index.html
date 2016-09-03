@@ -6,12 +6,18 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.0/sjcl.min.js"></script>
 
         <style>
+            body {
+                font-size : 18px;
+                font-family : 'Source Sans Pro', sans-serif;
+                background-color : #F7F7F7;
+            }
             #_header {
                 background-color : #323232;
                 color : #B3B3B3;
@@ -20,25 +26,32 @@
                 margin : 10px;
             }
             #_main {
-                margin-top : 10px;
-                background-color : #F7F7F7;
+                margin-top : 30px;
             }
 
             .card {
+                margin-bottom : 30px;
             }
             .card-body {
                 height : 400px;
+                border : 2px solid;
                 box-shadow : 5px 5px 5px grey;
                 border-radius : 15px
             }
-            #_card1 .card-body {
-                background-color : blue;
+            .card-body {
+                background-color : #404353;
+                color : #B3B3B3;
+                padding-left : 10px;
+                padding-right : 10px;
             }
-            #_card2 .card-body {
-                background-color : yellow;
+            .card-body h1 {
+                margin : 0;
+                padding-top : 10px;
+                padding-bottom : 10px;
             }
-            #_card3 .card-body {
-                background-color : red;
+
+            .card-body {
+                border-color : yellow;
             }
         </style>
 
@@ -56,7 +69,7 @@
                 </div>
             </div>
             <div id="_main" class="row">
-                <div id="_card1" class="card col-xs-4">
+                <div id="_card1" class="card col-xs-12 col-sm-6 col-md-4">
                     <div class="card-body">
                         <h1 class="text-center">Embarqué</h1>
                         <p>aoeisnkjfne zaedzajn</p>
@@ -67,10 +80,10 @@
                         </ul>
                     </div>
                 </div>
-                <div id="_card2" class="card col-xs-4">
+                <div id="_card2" class="card col-xs-12 col-sm-6 col-md-4">
                     <div class="card-body"></div>
                 </div>
-                <div id="_card3" class="card col-xs-4">
+                <div id="_card3" class="card col-xs-12 col-sm-6 col-md-4">
                     <div class="card-body"></div>
                 </div>
             </div>
