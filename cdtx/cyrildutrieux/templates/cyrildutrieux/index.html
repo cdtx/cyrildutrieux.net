@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link href="{% static "flag-icon-css/css/flag-icon.css" %}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -49,6 +50,7 @@
             }
 
             .card-header {
+                text-align : center;
                 padding-left : 10px;
                 padding-right : 10px;
                 border-radius : 12px 12px 0px 0px;
@@ -60,6 +62,54 @@
                 padding-right : 10px;
                 border-radius : 0px 0px 15px 15px;
             }
+/* xs */
+@media (max-width: 767px) {
+    .col-xs-text-left {
+        text-align: left;
+    }
+    .col-xs-text-center {
+        text-align: center;
+    }
+    .col-xs-text-right {
+        text-align: right;
+    }
+}
+/* sm */
+@media (min-width: 768px) {
+    .col-sm-text-left {
+        text-align: left;
+    }
+    .col-sm-text-center {
+        text-align: center;
+    }
+    .col-sm-text-right {
+        text-align: right;
+    }
+}
+/* md */
+@media (min-width: 992px) {
+    .col-md-text-left {
+        text-align: left;
+    }
+    .col-md-text-center {
+        text-align: center;
+    }
+    .col-md-text-right {
+        text-align: right;
+    }
+}
+/* lg */
+@media (min-width: 1200px) {
+    .col-lg-text-left {
+        text-align: left;
+    }
+    .col-lg-text-center {
+        text-align: center;
+    }
+    .col-lg-text-right {
+        text-align: right;
+    }
+}
 
         </style>
 
@@ -68,23 +118,27 @@
     <body>
         <div class="container-fluid">
             <div id="_header" class="row">
-                <div class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0">
+                <div class="visible-xs col-xs-12 col-xs-text-right">
+                    <span class="flag-icon flag-icon-fr"></span>
+                    <span class="flag-icon flag-icon-gb"></span>
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-0">
                     <img class="img img-responsive" src="{% static "images/avatar_pro.jpg" %}">
                 </div>
                 <div class="visible-xs clearfix"></div>
-                <div class="col-md-9">
+                <div class="col-xs-text-center col-xs-12 col-sm-7 col-md-8">
                     <h1>Cyril DUTRIEUX</h1>
                     <h2>Développeur logiciel indépendant</h2>
                 </div>
-                <div class="col-md-1">
-                
+                <div class="hidden-xs col-sm-2 col-sm-text-right col-md-2 col-md-text-right">
+                    <span class="flag-icon flag-icon-fr"></span>
                 </div>
             </div>
             <div id="_main" class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="card" id="_card1">
                         <div class="card-header">
-                            <h1 class="text-center">Logiciel embarqué</h1>
+                            <h1>Systèmes embarqués</h1>
                         </div>
                         <div class="card-body">
                             <p>aoeisnkjfne zaedzajn</p>
@@ -98,11 +152,17 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="card">
+                        <div class="card-header">
+                            <h1>Outils et productivité</h1>
+                        </div>
                         <div class="card-body"></div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="card">
+                        <div class="card-header">
+                            <h1>Web</h1>
+                        </div>
                         <div class="card-body"></div>
                     </div>
                 </div>
