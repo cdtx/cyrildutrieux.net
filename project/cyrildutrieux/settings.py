@@ -137,6 +137,7 @@ BOWER_INSTALLED_APPS = (
     'bootstrap#3.3.6',
     'components-font-awesome#4.6.3',
     'jquery-confirm#2.5.1',
+    'flag-icon-css#2.4.0',
 )
 
 REST_FRAMEWORK = {
