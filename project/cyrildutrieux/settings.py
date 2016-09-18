@@ -124,14 +124,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = '/tmp/static_root/cyrildutrieux/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'djangobower.finders.BowerFinder',
 )
-BOWER_COMPONENTS_ROOT = '/tmp/assets/cyril.dutrieux'
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'assets')
 BOWER_INSTALLED_APPS = (
     'jquery#2.2.4',
     'bootstrap#3.3.6',
