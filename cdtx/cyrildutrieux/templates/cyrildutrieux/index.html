@@ -12,6 +12,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.0/sjcl.min.js"></script>
+        <script src="{% static "js/content.js" %}"></script>
 
         <style>
             body {
@@ -136,9 +137,8 @@
                 </div>
                 <div class="visible-xs clearfix"></div>
                 <div class="col-xs-text-center col-xs-12 col-sm-7 col-md-8">
-                    <h1>Cyril DUTRIEUX</h1>
-                    <h2 class="lang lang-fr">Développeur logiciel indépendant</h2>
-                    <h2 class="lang lang-en">Freelance software developper</h2>
+                    <h1 data-content="name"></h1>
+                    <h2 data-content="function"></h2>
                 </div>
                 <div class="hidden-xs col-sm-2 col-sm-text-right col-md-2 col-md-text-right">
                     <a href="#" class="bp-lang bp-lang-fr"><span class="flag-icon flag-icon-fr"></span></a>
@@ -154,11 +154,11 @@
                                 <h1 class="lang lang-en">Embedded systems</h1>
                             </div>
                             <div class="card-body">
-                                <h3>Micro firmware pour objets connectés</h3>
+                                <p>Objets connectés, communicants, domotique, etc.</p>    
+                                <p>Je développe le logiciel embarqué pour ces systèmes à microcontroleurs</p>
                                 <ul>
-                                    <li></li>
-                                    <li>two</li>
-                                    <li>développement de cartes de prototypage</li>
+                                    <li>Micro firmware</li>
+                                    <li>Installation de systèmes d'exploitation</li>
                                 </ul>
                             </div>
                         </div>
@@ -170,11 +170,12 @@
                                 <h1 class="lang lang-en">Digital security</h1>
                             </div>
                             <div class="card-body">
-                                <p>aoeisnkjfne zaedzajn</p>
+                                <p>J'ai travaillé 4 ans pour Inside Secure, un acteur du marché de la sécurité digitale</p>
+                                <p>J'y ai développé des compétences dans les domaines :</p>
                                 <ul>
-                                    <li>one</li>
-                                    <li>two</li>
-                                    <li>three</li>
+                                    <li>Carte à puce, protocole ISO 7816</li>
+                                    <li>Java Card, GlobalPlatform</li>
+                                    <li>Crypographie (DES/AES, RSA)</li>
                                 </ul>
                             </div>
                         </div>
@@ -204,6 +205,20 @@
                 // Hide all languages
                 $('.lang').hide();
                 $('.lang-'+choosen).show();
+                $('[data-content]').each(function(index, value) {
+                    contentName = $(value).data('content');
+                    contentValue = content;
+                    $.each(contentName.split('.'), function(idx, val){
+                        contentValue = contentValue[val];
+                    })
+                    console.log('contentName: ' + contentName + ', contentValue: '+contentValue)
+                    if(typeof(contentValue) == 'string') {
+                        $(value).text(contentValue);
+                    }
+                    else if (typeof(contentValue) == 'object'){
+                        $(value).text(contentValue[choosen]);
+                    }
+                })
             }
 
             $(document).on('ready', function() {
