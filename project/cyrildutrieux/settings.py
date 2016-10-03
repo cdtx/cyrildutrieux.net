@@ -24,7 +24,7 @@ SECRET_KEY = '1nh38*lh#x(bp&md$8k(%jmqdvh1%47@nyq7-o8j*n1yva8&18'
 SECURE_SSL_REDIRECT = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
