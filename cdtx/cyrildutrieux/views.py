@@ -24,6 +24,7 @@ def homePage(request):
                             <li>Micro firmware</li>
                             <li>Installation de systèmes d'exploitation</li>
                         </ul>
+                        <p>Je peux également créer des cartes électroniques de prototypage</p>
                     '''),
                 },
             },
@@ -34,15 +35,15 @@ def homePage(request):
                 },
                 'body': {
                     'fr': format_html('''
-                        <p>J'ai travaillé 4 ans pour Inside Secure, un acteur du marché de la sécurité digitale</p>
-                        <p>J'y ai développé des compétences dans les domaines :</p>
+                        <p>J'ai travaillé 4 ans pour <a href="http://www.insidesecure.com">Inside Secure</a>, un acteur du marché de la sécurité digitale</p>
+                        <p>J'y ai construit des compétences dans les domaines :</p>
                         <ul>
-                            <li>Carte à puce, protocole ISO 7816</li>
+                            <li>Carte à puce, protocole ISO 7816, PC/SC</li>
                             <li>Java Card, GlobalPlatform</li>
                             <li>Crypographie (DES/AES, RSA)</li>
                         </ul>
+                        <p>Je peux être un atout sur du développement d'OS pour carte à puce, d'applet Java Card, de l'aide à la certification, écriture de scénarios de tests et déploiement.</p>
                         '''),
-                    'en': format_html(''''''),
                 },
             },
             {
@@ -51,15 +52,29 @@ def homePage(request):
                     'en': 'Productivity and tools',
                 },
                 'body': {
-                    'fr': format_html(''''''),
-                    'en': format_html(''''''),
+                    'fr': format_html('''
+                        <ul>
+                            <li>Automatisation de tâches par script</li>
+                            <li>Logiciel sur mesure</li>
+                            <li>Organisation de travail en équipe</li>
+                            <li>Source control management (Git, Subversion, etc.)</li>
+                            <li>Utilisation de Linux</li>
+                        </ul>
+                        '''),
                 },
             },
             {
                 'title': 'Web',
-                'body': {
-                    'fr': format_html(''''''),
-                    'en': format_html(''''''),
+                'body':{
+                    'fr': format_html('''
+                            <p>Pages web statiques (HTML, CSS, JavaScript, etc.)</p>
+                            <p>Sites web dynamiques :</p>
+                            <ul>
+                                <li>Serveur python (Django, Flask)</li>
+                                <li>Base de données</li>
+                                <li>REST API</li>
+                            </ul>
+                        '''),
                 },
             },
         ],
