@@ -1,4 +1,5 @@
 {% load static %}
+{% load language %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -137,8 +138,8 @@
                 </div>
                 <div class="visible-xs clearfix"></div>
                 <div class="col-xs-text-center col-xs-12 col-sm-7 col-md-8">
-                    <h1 data-content="name"></h1>
-                    <h2 data-content="function"></h2>
+                    <h1>{{content.name|lang:lang}}</h1>
+                    <h2>{{content.function|lang:lang}}</h2>
                 </div>
                 <div class="hidden-xs col-sm-2 col-sm-text-right col-md-2 col-md-text-right">
                     <a href="#" class="bp-lang bp-lang-fr"><span class="flag-icon flag-icon-fr"></span></a>
@@ -147,56 +148,16 @@
             </div>
             <div id="_main" class="row">
                 <div class="equal">
+                    {% for card in content.cards %}
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="card">
                             <div class="card-header">
-                                <h1 class="lang lang-fr">Systèmes embarqués</h1>
-                                <h1 class="lang lang-en">Embedded systems</h1>
+                                <h1>{{card.title|lang:lang}}</h1>
                             </div>
-                            <div class="card-body">
-                                <p>Objets connectés, communicants, domotique, etc.</p>    
-                                <p>Je développe le logiciel embarqué pour ces systèmes à microcontroleurs</p>
-                                <ul>
-                                    <li>Micro firmware</li>
-                                    <li>Installation de systèmes d'exploitation</li>
-                                </ul>
-                            </div>
+                            <div class="card-body">{{card.body|lang:lang}}</div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h1 class="lang lang-fr">Sécurité digitale</h1>
-                                <h1 class="lang lang-en">Digital security</h1>
-                            </div>
-                            <div class="card-body">
-                                <p>J'ai travaillé 4 ans pour Inside Secure, un acteur du marché de la sécurité digitale</p>
-                                <p>J'y ai développé des compétences dans les domaines :</p>
-                                <ul>
-                                    <li>Carte à puce, protocole ISO 7816</li>
-                                    <li>Java Card, GlobalPlatform</li>
-                                    <li>Crypographie (DES/AES, RSA)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h1 class="lang lang-fr">Outils et productivité</h1>
-                                <h1 class="lang lang-en">Tools and productivity</h1>
-                            </div>
-                            <div class="card-body"></div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h1>Web</h1>
-                            </div>
-                            <div class="card-body"></div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
