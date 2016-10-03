@@ -130,8 +130,8 @@
         <div class="container-fluid">
             <div id="_header" class="row">
                 <div class="visible-xs col-xs-12 col-xs-text-right">
-                    <a href="#" class="bp-lang bp-lang-fr"><span class="flag-icon flag-icon-fr"></span></a>
-                    <a href="#" class="bp-lang bp-lang-en"><span class="flag-icon flag-icon-gb"></span></a>
+                    <a href=".?lang=fr" class="bp-lang bp-lang-fr"><span class="flag-icon flag-icon-fr"></span></a>
+                    <a href=".?lang=en" class="bp-lang bp-lang-en"><span class="flag-icon flag-icon-gb"></span></a>
                 </div>
                 <div class="col-xs-6 col-xs-offset-3 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-0">
                     <img class="img img-responsive" src="{% static "images/avatar_pro.jpg" %}">
@@ -142,8 +142,8 @@
                     <h2>{{content.function|lang:lang}}</h2>
                 </div>
                 <div class="hidden-xs col-sm-2 col-sm-text-right col-md-2 col-md-text-right">
-                    <a href="#" class="bp-lang bp-lang-fr"><span class="flag-icon flag-icon-fr"></span></a>
-                    <a href="#" class="bp-lang bp-lang-en"><span class="flag-icon flag-icon-gb"></span></a>
+                    <a href=".?lang=fr" class="bp-lang bp-lang-fr"><span class="flag-icon flag-icon-fr"></span></a>
+                    <a href=".?lang=en" class="bp-lang bp-lang-en"><span class="flag-icon flag-icon-gb"></span></a>
                 </div>
             </div>
             <div id="_main" class="row">
@@ -161,42 +161,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            var displayLanguage = function(choosen) {
-                // Hide all languages
-                $('.lang').hide();
-                $('.lang-'+choosen).show();
-                $('[data-content]').each(function(index, value) {
-                    contentName = $(value).data('content');
-                    contentValue = content;
-                    $.each(contentName.split('.'), function(idx, val){
-                        contentValue = contentValue[val];
-                    })
-                    console.log('contentName: ' + contentName + ', contentValue: '+contentValue)
-                    if(typeof(contentValue) == 'string') {
-                        $(value).text(contentValue);
-                    }
-                    else if (typeof(contentValue) == 'object'){
-                        $(value).text(contentValue[choosen]);
-                    }
-                })
-            }
-
-            $(document).on('ready', function() {
-                // Determine language
-                lang = 'fr';
-                displayLanguage(lang);
-            })
-            $('.bp-lang').on('click', function(event) {
-                if(event.target.parentElement.classList.contains('bp-lang-fr')) {
-                    displayLanguage('fr');
-                }
-                else if(event.target.parentElement.classList.contains('bp-lang-en')) {
-                    displayLanguage('en');
-                }
-            })
-
-        </script>
     </body>
 </html>
 

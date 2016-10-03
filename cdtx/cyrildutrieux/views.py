@@ -14,7 +14,7 @@ def homePage(request):
             {
                 'title': {
                     'fr': 'Systèmes embarqués',
-                    'en': '',
+                    'en': 'Embedded systems',
                 },
                 'body' : {
                     'fr': format_html('''
@@ -24,7 +24,7 @@ def homePage(request):
                             <li>Micro firmware</li>
                             <li>Installation de systèmes d'exploitation</li>
                         </ul>
-                    ''')
+                    '''),
                 },
             },
             {
@@ -64,4 +64,4 @@ def homePage(request):
             },
         ],
     }
-    return render(request, 'cyrildutrieux/index.html', {'content': content, 'lang':'fr'})
+    return render(request, 'cyrildutrieux/index.html', {'content': content, 'lang':request.GET.get('lang', 'fr')})
