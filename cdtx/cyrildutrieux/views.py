@@ -13,8 +13,8 @@ def homePage(request):
         'cards': [
             {
                 'title': {
-                    'fr': 'Systèmes embarqués',
-                    'en': 'Embedded systems',
+                    'fr': 'Architecture Systèmes embarqués',
+                    'en': 'Architecture Embedded systems',
                 },
                 'body' : {
                     'fr': format_html('''
@@ -24,7 +24,7 @@ def homePage(request):
                             <li>Micro firmware</li>
                             <li>Installation de systèmes d'exploitation</li>
                         </ul>
-                        <p>Je peux également créer des cartes électroniques de prototypage</p>
+                        <p>Je crée également des cartes électroniques de prototypage</p>
                     '''),
                     'en': format_html('''
                         <p>For IoT devices, home automation and others various smart objects</p>
