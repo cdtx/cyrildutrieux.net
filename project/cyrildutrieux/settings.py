@@ -11,20 +11,28 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import configparser
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1nh38*lh#x(bp&md$8k(%jmqdvh1%47@nyq7-o8j*n1yva8&18'
-SECURE_SSL_REDIRECT = True
+# Use a separate file for the secret key
+try:
+    with open(os.path.join(BASE_DIR, 'secretkey.txt')) as f:
+        SECRET_KEY = f.read().strip()
+except FileNotFoundError:
+    print('RUNNING WITH A TEMPORARY SECRET KEY')
+    print('-> python3 manage.py generate_secret_key')
+    import random
+    SECRET_KEY = ''.join([random.choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for x in range(50)])
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# Other sensitive informations will be picked from an ini file, that will never be archived
+config = configparser.ConfigParser()
+config.read(os.path.join(BASE_DIR, 'config.ini'))
+
+DEBUG = config.getboolean('GENERAL', 'DEBUG', fallback=False)
+SECURE_SSL_REDIRECT = config.getboolean('GENERAL', 'SECURE_SSL_REDIRECT', fallback=True)
 
 ALLOWED_HOSTS = ['*']
 
@@ -38,21 +46,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sslserver',
-    'djangobower',
+    'django_generate_secret_key',
     'cdtx.django_error_handlers',
     'cdtx.cyrildutrieux',
     'cdtx.django_easy_password',
     'rest_framework',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'crum.CurrentRequestUserMiddleware',
@@ -129,19 +135,23 @@ STATIC_URL = '/static/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
 )
-BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'assets')
-BOWER_INSTALLED_APPS = (
-    'jquery#2.2.4',
-    'bootstrap#3.3.6',
-    'components-font-awesome#4.6.3',
-    'jquery-confirm#2.5.1',
-    'flag-icon-css#2.4.0',
+# Configure FileSystemFinder
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets', 'node_modules'),
 )
 
+# BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'assets')
+# BOWER_INSTALLED_APPS = (
+#     'jquery#2.2.4',
+#     'bootstrap#3.3.6',
+#     'components-font-awesome#4.6.3',
+#     'jquery-confirm#2.5.1',
+#     'flag-icon-css#2.4.0',
+# )
+
 REST_FRAMEWORK = {
-    'PAGE_SIZE': 100,
+    # 'PAGE_SIZE': 100,
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',

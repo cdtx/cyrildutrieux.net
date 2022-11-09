@@ -4,3 +4,5 @@
 cyrildutrieux.egg-info
 project/assets
 project/static
+project/config.ini
+project/secretkey.txt

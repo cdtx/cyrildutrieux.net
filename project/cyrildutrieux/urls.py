@@ -13,8 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+import django
 from django.conf import settings
-from django.conf.urls import include, url
+from django.urls import include, path,re_path
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
@@ -25,8 +26,8 @@ handler404 = 'cdtx.django_error_handlers.views.handler404'
 handler500 = 'cdtx.django_error_handlers.views.handler500'
 
 urlpatterns = [
-    url(r'^admin/', include('django.contrib.auth.urls')),
-    url(r'^easy_password/', include('cdtx.django_easy_password.urls')),
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    url(r'^', include('cdtx.cyrildutrieux.urls')),
+    re_path(r'^admin/', include('django.contrib.auth.urls')),
+    path(r'easy_password/', include('cdtx.django_easy_password.urls')),
+    re_path(r'^static/(?P<path>.*)$', django.views.static.serve, {'document_root': settings.STATIC_ROOT}),
+    re_path(r'^', include('cdtx.cyrildutrieux.urls')),
 ]
