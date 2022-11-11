@@ -18,7 +18,7 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     packages=['cdtx.cyrildutrieux'],
-    package_data={'cdtx.cyrildutrieux': recursive(['templates', 'static'], rel='cdtx/cyrildutrieux')},
+    package_data={'cdtx.cyrildutrieux': recursive(['templates', 'templatetags', 'static'], rel='cdtx/cyrildutrieux')},
     install_requires = []
 )
 
